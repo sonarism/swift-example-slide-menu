@@ -17,6 +17,7 @@
 		1A86F6FD22A99FB200205931 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A86F6FC22A99FB200205931 /* Protocol.swift */; };
 		1A86F6FF22A9A8AB00205931 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A86F6FE22A9A8AB00205931 /* MenuOptionCell.swift */; };
 		1A86F70122A9B69700205931 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A86F70022A9B69700205931 /* MenuOption.swift */; };
+		1A86F70422A9C20D00205931 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A86F70322A9C20D00205931 /* SettingsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1A86F6FC22A99FB200205931 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		1A86F6FE22A9A8AB00205931 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
 		1A86F70022A9B69700205931 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		1A86F70322A9C20D00205931 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				1A86F6F622A99BD600205931 /* ContainerController.swift */,
 				1A86F6F822A99BE300205931 /* HomeController.swift */,
 				1A86F6FA22A99BEA00205931 /* MenuController.swift */,
+				1A86F70322A9C20D00205931 /* SettingsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A86F70422A9C20D00205931 /* SettingsController.swift in Sources */,
 				1A86F6FB22A99BEA00205931 /* MenuController.swift in Sources */,
 				1A86F6FF22A9A8AB00205931 /* MenuOptionCell.swift in Sources */,
 				1A86F70122A9B69700205931 /* MenuOption.swift in Sources */,

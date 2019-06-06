@@ -35,6 +35,7 @@ class HomeController: UIViewController {
         
         navigationItem.title = "Side Menu Test"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "open", style: .plain, target: self, action: #selector(handleMenuToggle))
+        navigationItem.rightBarButtonItem?.tintColor = .white
         
         // In case of using image, load image into assets then IMG.withRenderingMode(.alwaysOriginal) into UIImage?
         // navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage?, style: .plain, target: self, action: #selector(handleMenuToggle))
