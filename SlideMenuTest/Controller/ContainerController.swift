@@ -10,7 +10,7 @@ import UIKit
 
 class ContainerController: UIViewController {
     // MARK: - Proparties
-    var menuController: UIViewController! // Slide Menu
+    var menuController: MenuController! // Slide Menu
     var centerController: UIViewController! // Main Content
     
     var isExpanded = false // track show/hide menu
@@ -37,6 +37,7 @@ class ContainerController: UIViewController {
     func configureMenuController () {
         if menuController == nil {
             menuController = MenuController()
+            menuController.delegate = self
             view.insertSubview(menuController.view, at: 0)
             addChild(menuController)
             menuController.didMove(toParent: self)
@@ -44,33 +45,51 @@ class ContainerController: UIViewController {
         }
     }
     
-    func showMenuController(shouldExpand: Bool) {
+    func showMenuController(shouldExpand: Bool, menuOption: MenuOption?) {
         if shouldExpand {
             // show menu
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 self.centerController.view.frame.origin.x = 80 - self.centerController.view.frame.width
             }, completion: nil)
         } else {
+            
             // hide menu
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 self.centerController.view.frame.origin.x = 0
             }, completion: nil)
+            
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                self.centerController.view.frame.origin.x = 0
+            }) { (_) in
+                guard let menuOption = menuOption else { return }
+                self.didSelectMenuOption(menuOption: menuOption)            }
         }
     }
     
+    func didSelectMenuOption(menuOption: MenuOption) {
+        switch menuOption {
+            
+        case .Profile:
+            print("Show Profile")
+        case .Inbox:
+            print("Show Inbot")
+        case .Notification:
+            print("Show Notifications")
+        case .Settings:
+            print("Show Settings")
+        }
+    }
 }
 
 
 extension ContainerController: HomeControllerDelegate {
-    func handleMenuToggle() {
-        
+    func handleMenuToggle(forMenuOption menuOption: MenuOption?) {
         if !isExpanded {
             configureMenuController()
         }
         
         isExpanded = !isExpanded
-        showMenuController(shouldExpand: isExpanded)
+        showMenuController(shouldExpand: isExpanded, menuOption: menuOption)
     }
-    
-    
 }
